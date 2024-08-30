@@ -1,5 +1,7 @@
 package arep.lab2;
 
+import org.json.JSONObject;
+
 import java.io.*;
 import java.net.Socket;
 

@@ -26,6 +26,10 @@ public class LambdaServer {
         getRoutes.put(url, s);
     }
 
+    public static void post(String url, Service s){
+        postRoutes.put(url,s);
+    }
+
     public static void staticfiles(String folder){
         filesPath = "target/classes" + folder;
     }

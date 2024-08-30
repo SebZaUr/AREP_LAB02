@@ -2,11 +2,7 @@ let data = []
 let sportName = ''
 function getCountries(sport) {
     sportName = sport;
-    var previous = document.getElementById("previous");
-    var next = document.getElementById("next");
-    previous.setAttribute('data-page',0);
-    next.setAttribute('data-page', 1);
-    nextCourses("previous");
+    getJSON();
 }
 
 function createDivs(limit,start) {
@@ -22,47 +18,12 @@ function createDivs(limit,start) {
     }
 }
 
-function nextCourses(button) {
-    getJSON();
-    var page = parseInt(document.getElementById(button).getAttribute('data-page'));
-    var course = document.getElementById('text');
-    course.textContent = sportName+":Pagina-"+ String(page+1);
-    var parar = 0;
-    var previous = document.getElementById("previous");
-    var next = document.getElementById("next");
-    if ((page+1) * 10 > data.length) {
-        previous.setAttribute('aria-disabled', false);
-        next.setAttribute('aria-disabled', true);
-        next.setAttribute('tabindex', -1);
-        previous.setAttribute('tabindex', 1);
-        previous.setAttribute('data-page', page - 1);
-        next.setAttribute('data-page', page);
-        parar = data.length;
-    } else if (page == 0) {
-        previous.setAttribute('aria-disabled', true);
-        next.setAttribute('aria-disabled', false);
-        previous.setAttribute('tabindex', -1);
-        next.setAttribute('tabindex', 1);
-        previous.setAttribute('data-page', 0);
-        next.setAttribute('data-page', 1);
-        parar = 10;
-    } else {
-        previous.setAttribute('aria-disabled', false);
-        next.setAttribute('aria-disabled', false);
-        previous.setAttribute('tabindex', 1);
-        next.setAttribute('tabindex', 2);
-        previous.setAttribute('data-page', page - 1);
-        next.setAttribute('data-page', page + 1);
-        parar = (page*10) + 10;
-    }
-    createDivs(parar, page*10);
-}
-
 function getJSON(){
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
         data =JSON.parse(this.responseText);
+        createDivs(200,0);
     }
-    xhttp.open("GET", "/App/sport?name=" + encodeURIComponent(sportName), true);
+    xhttp.open("GET", "/App/sport?name=" + sportName);
     xhttp.send();
 }

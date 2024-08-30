@@ -1,6 +1,84 @@
-.dynamic-div {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
+/* Estilo para el encabezado */
+header {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    border-bottom: 2px solid #ddd;
+}
+
+header h1 {
+    color: #343a40;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    color: #6c757d;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+/* Estilo para los botones de deportes */
+#deportes {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#deportes .btn {
+    margin: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#deportes .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para la tabla */
+#countriesTable {
+    margin-top: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#countriesTable th, #countriesTable td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#countriesTable thead {
+    background-color: #343a40;
+    color: #fff;
+}
+
+/* Estilo para la paginación */
+.pagination {
+    margin: 20px 0;
+}
+
+.page-link {
+    color: #007bff;
+}
+
+.page-link:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilo para el contenedor */
+#container {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los títulos dentro de la tabla */
+#container h3 {
+    text-align: center;
+    color: #343a40;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
