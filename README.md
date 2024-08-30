@@ -39,3 +39,10 @@ The platform provides an intuitive way for users to explore and analyze informat
 The project is now running. To open it, click on this link in your browser: [INFOSPORTS](http://localhost:8080/index.html).
 
 ### Test
+
+```bash
+    mvn test
+   ```
+
+### Autor
+Sebastian Zamora Urrego, en especial agradecimiento al creador de la API Sports Highlights API ya que fue utilizada en el proyecto
